@@ -8,9 +8,7 @@
 }
 #hra{
     font-size: 100px;
-}
-#hra2{
-    font-size: 100px;
+    background-color: lime;
 }
 .tlacitka{
     font-size: 35px;
@@ -38,4 +36,7 @@ body{
 #coins{
     color: darkorange;
     font-size: 35px;
+}
+.mainButton{
+    padding-top: 10px;
 }

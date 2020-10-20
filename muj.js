@@ -4,6 +4,7 @@ let hody2 = [];
 let hodyCel2 = [];
 let coins = 100;
 let sazka = 0;
+let timer = false;
 document.getElementById("inputButton").addEventListener("click", function(){
     zadatSazku();
 })
@@ -16,39 +17,50 @@ document.getElementById('hra').addEventListener('click',
         let vysledekBot;
         let konec;
         let interval;
-        if(coins<sazka){
+        if(coins<sazka || sazka<0){
             document.getElementById("vyhra").style.color = "darkOrange";
             document.getElementById("vyhra").innerHTML = "TOLIK ŽETONŮ NEMÁTE !";  
             sazka = 0;
         }
         else{
-        coins -= sazka;
-        document.getElementById("coins").innerText = coins;
-        document.getElementById("vyhra").innerHTML = "";
-        interval = window.setInterval(function () {
-            vysledekHrac = hod();
-            hod2(vysledekHrac);
-            console.log(hody);
-            vysledekBot = hod3();
-            hod4(vysledekBot);
-            console.log(hody2);
-            konec = hody.length / 2;
-            if (konec >= 10) {
-                clearInterval(interval);
-                vyhra();
-                hody = [];
-                hody2 = [];
-                hodyCel = [];
-                hodyCel2 = [];
+            timer = setInterval(animace, 50);
+            coins -= sazka;
+            document.getElementById("coins").innerText = coins;
+            document.getElementById("vyhra").innerHTML = "";
+            interval = window.setInterval(function () {
+                vysledekHrac = hod();
+                hod2(vysledekHrac);
+                console.log(hody);
+                vysledekBot = hod3();
+                hod4(vysledekBot);
+                console.log(hody2);
+                konec = hody.length / 2;
+                clearInterval(timer);
+                if (konec >= 5) {
+                    clearInterval(interval);
+                    vyhra();
+                    hody = [];
+                    hody2 = [];
+                    hodyCel = [];
+                    hodyCel2 = [];
             }
-        }, 1000);
+        }, 2000);
         }
     }
 );
 function zadatSazku(){
     sazka = document.getElementById("sazka").value;
 }
-
+function animace(){
+    let hod1 = Math.ceil(Math.random() * 6);
+    let hod2 = Math.ceil(Math.random() * 6);
+    let hod3 = Math.ceil(Math.random() * 6);
+    let hod4 = Math.ceil(Math.random() * 6);
+    document.getElementById('kostka').src = 'img/kostka' + hod1 + '.png';
+    document.getElementById('kostka2').src = 'img/kostka' + hod2 + '.png';
+    document.getElementById('kostka3').src = 'img/kostka' + hod3 + '.png';
+    document.getElementById('kostka4').src = 'img/kostka' + hod4 + '.png';
+}
 function vyhra(){
     if(suma(hody)>suma(hody2)){
         document.getElementById("vyhra").style.color = "green";
