@@ -1,3 +1,41 @@
 .h1{
     font-size: 50px;
+    color: red;
+}
+.kostka1{
+    padding-bottom: 50px;
+    color: blue;
+}
+#hra{
+    font-size: 100px;
+}
+#hra2{
+    font-size: 100px;
+}
+.tlacitka{
+    font-size: 35px;
+    padding: 25px;
+}
+body{
+    background-image: url(img/kostky.png);
+}
+.coiny{
+    width: 7%;
+    padding-left: 50px;
+}
+.vyhra{
+    color: red;
+    padding-top: 20px;
+    font-size: 100px;
+}
+.vyrazne{
+    color: darkorange;
+    font-size: 30px;
+}
+#kostka, #kostka3{
+    padding-right: 30px;
+}
+#coins{
+    color: darkorange;
+    font-size: 35px;
 }

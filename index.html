@@ -13,14 +13,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="container-fluid jumbotron">
-        <h1 class="text-center h1">Kostka</h1>
-        
-
+    <header class="container-fluid jumbotron jumbo1">
+        <h1 class="text-center h1">Kostky</h1>
     </header>
     <main>
-
-        
+        <div class="coins text-left row">
+            <img class="coiny" src="img/coins.svg" alt="">
+            <p id="coins"></p>
+        </div>
+        <div class="text-center vyhra">
+            <p id="vyhra"></p>
+        </div>
+        <div class="row">
+            <div class="container col-md-6 text-center kostka1">  
+                <p class="rozrazeni vyrazne">VY</p>   
+                <img id="kostka" src="img/kostka6.png" alt="Kostka">
+                <img id="kostka2" src="img/kostka6.png" alt="Kostka">
+                <div id="vysledek" class="text-center"></div>
+            </div>
+            <div class="container col-md-6 text-center kostka1">  
+                <p class="rozrazeni vyrazne">PROTIVNÍK</p>   
+                <img id="kostka3" src="img/kostka6.png" alt="Kostka">
+                <img id="kostka4" src="img/kostka6.png" alt="Kostka">
+                <div id="vysledek2" class="text-center"></div>
+            </div>
+        </div>
+        <div class="text-center">
+        <input id="sazka" placeholder="Zadejte sázku">
+        <button id="inputButton">Potvrdit</button>
+    </div>
+        <div class="text-center">
+            <button id="hra">Hrej</button>
+        </div>
 
     </main>
 
